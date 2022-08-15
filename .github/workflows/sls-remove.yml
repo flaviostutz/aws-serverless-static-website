@@ -10,7 +10,7 @@ jobs:
   sls-package:
     uses: flaviostutz/gh-workflows-serverless/.github/workflows/sls-remove.yml@main
     with:
-      stage: pr${{ github.event.number }}
+      stage: pr-${{ github.event.number }}
       workdir: ./
       deploy: true
       AWS_DEFAULT_REGION: us-east-1
