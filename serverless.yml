@@ -6,6 +6,15 @@ provider:
   name: aws
   runtime: nodejs12.x
 
+custom:
+  siteName: ${sls:stage}.test1.stutz.click
+  hostedZoneName: stutz.click
+  aliasHostedZoneId: Z3AQBSTGFYJSTF    # us-east-1
+  aliasDNSName: s3-website-us-east-1.amazonaws.com
+  s3Sync:
+    - bucketName: ${self:custom.siteName}
+      localDir: static
+
 plugins:
   - serverless-s3-sync
 
@@ -52,13 +61,4 @@ resources:
         Name:
           Ref: StaticSite
         Type: 'A'
-
-custom:
-  siteName: test1.stutz.click
-  hostedZoneName: stutz.click
-  aliasHostedZoneId: Z3AQBSTGFYJSTF    # us-east-1
-  aliasDNSName: s3-website-us-east-1.amazonaws.com
-  s3Sync:
-    - bucketName: ${self:custom.siteName}
-      localDir: static
 
