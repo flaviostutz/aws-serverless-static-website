@@ -11,5 +11,6 @@ jobs:
     with:
       stage: pr${{ github.event.number }}
       workdir: ./
+      deploy: false
 
 
