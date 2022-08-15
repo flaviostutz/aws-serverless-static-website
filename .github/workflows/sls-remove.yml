@@ -4,10 +4,11 @@ on:
   pull_request:
     branches:
       - main
+    types: [closed]
 
 jobs:
   sls-package:
-    uses: flaviostutz/gh-workflows-serverless/.github/workflows/sls-package.yml@main
+    uses: flaviostutz/gh-workflows-serverless/.github/workflows/sls-remove.yml@main
     with:
       stage: pr${{ github.event.number }}
       workdir: ./
