@@ -2,16 +2,14 @@ name: sls-package
 
 on:
   pull_request:
-    branches:
-      - main
 
 jobs:
-  sls-package:
-    uses: flaviostutz/gh-workflows-serverless/.github/workflows/sls-package.yml@main
+  sls-pr-deploy:
+    name: Deploy PR environment
+    uses: flaviostutz/gh-workflows-serverless/.github/workflows/sls-deploy.yml@main
     with:
-      stage: pr-${{ github.event.number }}
+      stage: pr${{ github.event.number }}
       workdir: ./
-      deploy: true
       AWS_DEFAULT_REGION: us-east-1
     secrets:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
