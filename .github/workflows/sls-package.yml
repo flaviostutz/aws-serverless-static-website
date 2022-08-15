@@ -12,4 +12,3 @@ jobs:
       stage: pr${{ github.event.number }}
       workdir: ./
 
-
