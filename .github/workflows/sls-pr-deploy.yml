@@ -1,4 +1,4 @@
-name: sls-package
+name: sls-pr-deploy
 
 on:
   pull_request:

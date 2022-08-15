@@ -7,7 +7,8 @@
     "lint": "echo \"no linting. ignoring\" && exit 0",
     "test": "echo \"no tests. ignoring\" && exit 0",
     "package": "sls package",
-    "deploy": "sls deploy"
+    "deploy": "sls deploy",
+    "remove": "sls remove"
   },
   "author": "",
   "license": "MIT",
