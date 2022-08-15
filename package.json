@@ -4,7 +4,8 @@
   "description": "",
   "main": "handler.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "package": "sls package",
+    "test": "echo \"no tests. skipping\" && exit 0"
   },
   "author": "",
   "license": "MIT",

@@ -1,0 +1,13 @@
+name: sls-package
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  sls-package:
+    uses: flaviostutz/gh-workflows-serverless/sls-package.yml@main
+    with:
+      stage: pr${{ github.event.number }}
+      workdir: ./
