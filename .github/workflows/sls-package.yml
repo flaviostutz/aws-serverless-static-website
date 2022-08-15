@@ -7,7 +7,7 @@ on:
 
 jobs:
   sls-package:
-    uses: flaviostutz/gh-workflows-serverless/sls-package.yml@main
+    uses: flaviostutz/gh-workflows-serverless/.github/workflows/sls-package.yml@main
     with:
       stage: pr${{ github.event.number }}
       workdir: ./
