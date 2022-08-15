@@ -4,8 +4,10 @@
   "description": "",
   "main": "handler.js",
   "scripts": {
+    "lint": "echo \"no linting. ignoring\" && exit 0",
+    "test": "echo \"no tests. ignoring\" && exit 0",
     "package": "sls package",
-    "test": "echo \"no tests. skipping\" && exit 0"
+    "deploy": "sls deploy"
   },
   "author": "",
   "license": "MIT",
