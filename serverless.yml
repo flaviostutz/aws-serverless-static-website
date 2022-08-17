@@ -1,19 +1,26 @@
 service: simple-static
-
 frameworkVersion: '3'
+configValidationMode: error
 
 provider:
   name: aws
   runtime: nodejs12.x
 
 custom:
-  siteName: ${sls:stage}.test1.stutz.click
   hostedZoneName: stutz.click
   aliasHostedZoneId: Z3AQBSTGFYJSTF    # us-east-1
   aliasDNSName: s3-website-us-east-1.amazonaws.com
   s3Sync:
-    - bucketName: ${self:custom.siteName}
+    - bucketName: ${param:siteName}
       localDir: static
+
+params:
+  default:
+    siteName: ${sls:stage}.test1.stutz.click
+  dev:
+    siteName: dev.test1.stutz.click
+  prd:
+    siteName: test1.stutz.click
 
 plugins:
   - serverless-s3-sync
@@ -24,7 +31,7 @@ resources:
       Type: AWS::S3::Bucket
       Properties:
         AccessControl: PublicRead
-        BucketName: ${self:custom.siteName}
+        BucketName: ${param:siteName}
         WebsiteConfiguration:
           IndexDocument: index.html
 

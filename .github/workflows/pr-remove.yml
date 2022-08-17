@@ -1,4 +1,4 @@
-name: sls-pr-remove
+name: pr-remove
 
 on:
   pull_request:
