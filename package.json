@@ -6,9 +6,9 @@
   "scripts": {
     "lint": "echo \"no linting. ignoring\" && exit 0",
     "test": "echo \"no tests. ignoring\" && exit 0",
-    "sls:package": "sls package",
+    "sls:package": "sls package --verbose",
     "sls:deploy": "sls deploy --verbose",
-    "sls:remove": "sls remove",
+    "sls:remove": "sls remove --verbose",
     "sls:print": "sls print"
   },
   "author": "",
@@ -18,3 +18,4 @@
     "serverless": "^3.21.0"
   }
 }
+
