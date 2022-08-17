@@ -8,7 +8,8 @@
     "test": "echo \"no tests. ignoring\" && exit 0",
     "sls:package": "sls package",
     "sls:deploy": "sls deploy --verbose",
-    "sls:remove": "sls remove"
+    "sls:remove": "sls remove",
+    "sls:print": "sls print"
   },
   "author": "",
   "license": "MIT",
