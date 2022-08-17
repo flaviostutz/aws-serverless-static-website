@@ -11,7 +11,7 @@ custom:
   aliasHostedZoneId: Z3AQBSTGFYJSTF    # us-east-1
   aliasDNSName: s3-website-us-east-1.amazonaws.com
   s3Sync:
-    - bucketName: ${param.siteName}
+    - bucketName: ${param:siteName}
       localDir: static
 
 params:
