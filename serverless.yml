@@ -26,8 +26,8 @@ plugins:
   - serverless-s3-sync
 
 outputs:
-  # used by pipeline to set environment url in GH
-  url: http://${param:siteName}
+  # used by pipeline to set environment url in GH 
+  environment-url: http://${param:siteName}
 
 resources:
   Resources:
