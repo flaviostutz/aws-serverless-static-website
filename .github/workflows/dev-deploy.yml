@@ -9,10 +9,10 @@ jobs:
     name: Deploy development environment
     uses: flaviostutz/gh-makefile/.github/workflows/make-ci.yml@main
     with:
-      stage: dev
       working-directory: ./
       tooling: node
       tooling-version: 16
+      stage: dev
       AWS_DEFAULT_REGION: us-east-1
       environment: dev
     secrets:

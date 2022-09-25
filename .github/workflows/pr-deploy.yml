@@ -9,8 +9,10 @@ jobs:
     name: Deploy PR environment
     uses: flaviostutz/gh-makefile/.github/workflows/make-ci.yml@main
     with:
-      stage: pr${{ github.event.number }}
       working-directory: ./
+      tooling: node
+      tooling-version: 16
+      stage: pr${{ github.event.number }}
       AWS_DEFAULT_REGION: us-east-1
       environment: pr
     secrets:
