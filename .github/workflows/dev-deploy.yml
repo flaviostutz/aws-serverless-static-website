@@ -7,10 +7,10 @@ on:
 jobs:
   deploy:
     name: Deploy development environment
-    uses: flaviostutz/gh-workflows-serverless/.github/workflows/sls-deploy.yml@main
+    uses: flaviostutz/gh-makefile/.github/workflows/make-ci.yml@main
     with:
       stage: dev
-      workdir: ./
+      working-directory: ./
       AWS_DEFAULT_REGION: us-east-1
       environment: dev
     secrets:
