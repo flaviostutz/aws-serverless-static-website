@@ -15,7 +15,7 @@ package: prereqs
 deploy: prereqs
 	npm run sls:deploy -- --stage ${STAGE}
 
-get-environment-url: prereqs
+get-environment-url:
 	PRINT_OUT=$$(npm run sls:print -- --stage ${STAGE}); \
 	OUT_URL=$$(echo $${PRINT_OUT} | { grep -Eo "environment-url: (http|https)://[a-zA-Z0-9./?=_%:-]*" || true; } | head -1); \
 	if [ "$${OUT_URL}" != "" ]; then \
