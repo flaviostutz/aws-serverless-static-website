@@ -5,5 +5,5 @@ lint:
 	npm run lint
 
 unit-tests:
-	npm run tests
+	npm run test
 

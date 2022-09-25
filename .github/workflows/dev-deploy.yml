@@ -11,6 +11,8 @@ jobs:
     with:
       stage: dev
       working-directory: ./
+      tooling: node
+      tooling-version: 16
       AWS_DEFAULT_REGION: us-east-1
       environment: dev
     secrets:
