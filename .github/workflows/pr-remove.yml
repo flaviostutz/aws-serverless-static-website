@@ -7,12 +7,16 @@ on:
 jobs:
   sls-pr-remove:
     name: Remove PR environment
-    uses: flaviostutz/gh-workflows-serverless/.github/workflows/sls-remove.yml@main
+    uses: flaviostutz/gh-makefile/.github/workflows/make-ci.yml@main
     with:
+      working-directory: ./
+      tooling: node
+      tooling-version: 16
       stage: pr${{ github.event.number }}
-      workdir: ./
-      AWS_DEFAULT_REGION: us-east-1
+      target-build: true
+      target-undeploy: true
       environment: pr
+      AWS_DEFAULT_REGION: us-east-1
     secrets:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

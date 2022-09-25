@@ -8,12 +8,18 @@ on:
 jobs:
   deploy:
     name: Deploy production environment
-    uses: flaviostutz/gh-workflows-serverless/.github/workflows/sls-deploy.yml@main
+    uses: flaviostutz/gh-makefile/.github/workflows/make-ci.yml@main
     with:
+      working-directory: ./
+      tooling: node
+      tooling-version: 16
       stage: prd
-      workdir: ./
-      AWS_DEFAULT_REGION: us-east-1
+      target-build: true
+      target-lint: true
+      target-unit-tests: true
+      target-deploy: true
       environment: prd
+      AWS_DEFAULT_REGION: us-east-1
     secrets:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
