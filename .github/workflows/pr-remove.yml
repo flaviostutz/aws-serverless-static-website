@@ -13,6 +13,7 @@ jobs:
       tooling: node
       tooling-version: 16
       stage: pr${{ github.event.number }}
+      target-build: true
       target-undeploy: true
       environment: pr
       AWS_DEFAULT_REGION: us-east-1
