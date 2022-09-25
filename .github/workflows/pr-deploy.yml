@@ -16,8 +16,10 @@ jobs:
       target-build: true
       target-lint: true
       target-unit-tests: true
+      target-package: true
       target-deploy: true
       environment: pr
+      artifact-path: .serverless
       AWS_DEFAULT_REGION: us-east-1
     secrets:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}

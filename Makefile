@@ -1,10 +1,5 @@
 SHELL := /bin/bash
 
-all: build lint unit-tests deploy get-environment-url
-
-clean: undeploy
-	rm -rf node_modules
-
 build: prereqs
 	npm ci
 
@@ -13,6 +8,9 @@ lint: prereqs
 
 unit-tests: prereqs
 	npm run test
+
+package: prereqs
+	npm run sls:package -- --stage ${STAGE}
 
 deploy: prereqs
 	npm run sls:deploy -- --stage ${STAGE}
@@ -34,3 +32,9 @@ prereqs:
 		echo "ENV STAGE is required"; \
 		exit 1; \
 	fi
+
+all: build lint unit-tests deploy get-environment-url
+
+clean: undeploy
+	rm -rf node_modules
+
