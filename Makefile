@@ -24,6 +24,9 @@ get-environment-url: prereqs
 		exit 0; \
 	fi
 
+integration-tests:
+	curl ${ENVIRONMENT_URL}
+
 undeploy: prereqs
 	npm run sls:remove -- --stage ${STAGE}
 
