@@ -29,6 +29,7 @@ jobs:
     with:
       working-directory: ./
       stage: pr${{ github.event.number }}
+      target-build: true
       target-integration-tests: true
       # environment-url: ${{ needs.deploy.outputs.environment-url }}
     needs: deploy
