@@ -28,6 +28,7 @@ jobs:
     uses: flaviostutz/gh-makefile/.github/workflows/make-ci.yml@main
     with:
       working-directory: ./
+      stage: pr${{ github.event.number }}
       target-integration-tests: true
-      environment-url: ${{ needs.deploy.outputs.environment-url }}
+      environment-url: "http://pr22.test1.stutz.click/"
     needs: deploy
