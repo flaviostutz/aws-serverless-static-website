@@ -28,7 +28,6 @@ jobs:
     uses: flaviostutz/gh-makefile/.github/workflows/make-ci.yml@main
     with:
       working-directory: ./
-      target-build: true
       target-integration-tests: true
       environment-url: ${{ needs.deploy.outputs.environment-url }}
     needs: deploy
