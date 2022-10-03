@@ -30,5 +30,5 @@ jobs:
       working-directory: ./
       stage: pr${{ github.event.number }}
       target-integration-tests: true
-      environment-url: "http://pr22.test1.stutz.click/"
+      # environment-url: ${{ needs.deploy.outputs.environment-url }}
     needs: deploy
