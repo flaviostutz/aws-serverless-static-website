@@ -29,5 +29,5 @@ jobs:
     with:
       working-directory: ./
       target-integration-tests: true
-      environment-url: ${{needs.deploy.outputs.environment-url}}
+      environment-url: ${{ needs.deploy.outputs.environment-url }}
     needs: deploy
